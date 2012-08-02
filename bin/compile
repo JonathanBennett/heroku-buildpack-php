@@ -30,16 +30,13 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-mkdir $APACHE_PATH
-mkdir $PHP_PATH
-
-APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tgz"
+APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
-curl --silent --max-time 60 --location "$APACHE_URL" | tar zx -C $APACHE_PATH
+curl --silent --max-time 60 --location "$APACHE_URL" | tar zx
 
-PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/php-5.4.tgz"
+PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/php.tar.gz"
 echo "-----> Bundling PHP version $PHP_VERSION"
-curl --silent --max-time 60 --location "$PHP_URL" | tar xz -C $PHP_PATH
+curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf

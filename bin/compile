@@ -34,9 +34,7 @@ mkdir /app/apache
 
 APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tgz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
-curl -O --silent --max-time 60 --location "$APACHE_URL" 
-mv apache.tgz /app/apache
-tar xz apache.tgz
+curl --silent --max-time 60 --location "$APACHE_URL" | tar zxvf -C $APACHE_PATH
 
 PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/php-5.4.tgz"
 echo "-----> Bundling PHP version $PHP_VERSION"

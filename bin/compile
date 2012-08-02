@@ -36,7 +36,14 @@ curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
 echo "-----> Bundling PHP version $PHP_VERSION"
-curl --silent --max-time 60 --location "$PHP_URL" | tar xz
+wget http://us2.php.net/get/php-5.3.6.tar.gz/from/us.php.net/mirror 
+    mv mirror php.tar.gz
+    tar xzvf php.tar.gz
+    cd php-5.3.6/
+    ./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl --with-jpeg
+    make
+    make install
+    cd ..
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf

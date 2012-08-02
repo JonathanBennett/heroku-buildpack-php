@@ -30,7 +30,7 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-
+mkdir $APACHE_PATH
 
 APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tgz"
 echo "-----> Bundling Apache version $APACHE_VERSION"

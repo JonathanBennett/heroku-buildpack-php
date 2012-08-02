@@ -31,7 +31,6 @@ if [ -f www/Procfile ]; then
 fi
 
 # apache
-mkdir /app
 curl -O http://apache.cyberuse.com//httpd/httpd-2.2.19.tar.gz
 tar xvzf httpd-2.2.19.tar.gz
 cd httpd-2.2.19

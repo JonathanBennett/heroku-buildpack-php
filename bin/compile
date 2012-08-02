@@ -6,7 +6,7 @@ set -e
 
 # config
 APACHE_VERSION="2.2.22"
-APACHE_PATH="httpd-2.2"
+APACHE_PATH="apache"
 PHP_VERSION="5.4.5"
 PHP_PATH="php"
 
@@ -30,7 +30,7 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/httpd-2.2.tgz"
+APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tgz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 

@@ -7,7 +7,7 @@ set -e
 # config
 APACHE_VERSION="2.2.22"
 APACHE_PATH="apache"
-PHP_VERSION="5.3.10"
+PHP_VERSION="5.4.5"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -30,11 +30,11 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-APACHE_URL="https://s3.amazonaws.com/php-lp/apache-$APACHE_VERSION.tar.gz"
+APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/httpd-2.2.tgz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
-PHP_URL="https://s3.amazonaws.com/php-lp/php-$PHP_VERSION.tar.gz"
+PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/php-5.4.tgz"
 echo "-----> Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
@@ -45,11 +45,6 @@ cp $LP_DIR/conf/php.ini php
 # make php available on bin
 mkdir -p bin
 ln -s /app/php/bin/php bin/php
-
-cd /app/php/bin/php
-./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl
-make
-make install
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do

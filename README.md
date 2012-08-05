@@ -65,8 +65,4 @@ To change this buildpack, fork it on Github. Push up changes to your fork, then 
 Meta
 ----
 
-Created by Pedro Belo.
-Many thanks to Keith Rarick for the help with assorted Unix topics :)
-=======
-heroku-buildpack-php
-====================
+Created by Pedro Belo. Modified by Jonathan Bennett.

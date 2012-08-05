@@ -67,3 +67,6 @@ Meta
 
 Created by Pedro Belo.
 Many thanks to Keith Rarick for the help with assorted Unix topics :)
+=======
+heroku-buildpack-php
+====================

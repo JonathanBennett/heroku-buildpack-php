@@ -60,6 +60,12 @@ echo "Launching apache"
 exec /app/apache/bin/httpd -DNO_DETACH
 EOF
 
+ls
+ls /app/php/
+ls /app/apache/
+cat /app/php/VERSION
+
+
 chmod +x boot.sh
 
 # clean the cache

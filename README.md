@@ -3,21 +3,12 @@ Apache+PHP build pack
 
 This is a build pack bundling PHP and Apache for Heroku apps.
 
-<<<<<<< HEAD
 EDIT CREATE.SH
 
 RUN 
 
 Configuration
 -------------
-
-The config files are bundled with the build pack itself:
-=======
-Configuration
--------------
-
-The config files are bundled with the LP itself:
->>>>>>> 79088a5e5c2847e8a8df3faddfd35e2e338f2ded
 
 * conf/httpd.conf
 * conf/php.ini
@@ -41,11 +32,7 @@ Pre-compiling binaries
     mv mirror php.tar.gz
     tar xzvf php.tar.gz
     cd php-5.3.6/
-<<<<<<< HEAD
-    ./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl
-=======
     ./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl --with-jpg
->>>>>>> 79088a5e5c2847e8a8df3faddfd35e2e338f2ded
     make
     make install
     cd ..
@@ -80,9 +67,5 @@ To change this buildpack, fork it on Github. Push up changes to your fork, then 
 Meta
 ----
 
-<<<<<<< HEAD
-Created by Pedro Belo.
-Many thanks to Keith Rarick for the help with assorted Unix topics :)
-=======
 Created by Pedro Belo. Modified by Jonathan Bennett.
->>>>>>> 79088a5e5c2847e8a8df3faddfd35e2e338f2ded
+

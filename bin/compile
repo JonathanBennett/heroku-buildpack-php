@@ -7,7 +7,7 @@ set -e
 # config
 APACHE_VERSION="2.2.22"
 APACHE_PATH="apache"
-PHP_VERSION="5.4.6"
+PHP_VERSION="5.3.6"
 PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
@@ -30,11 +30,11 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/apache.tar.gz"
+APACHE_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/12092012/apache.tar.gz"
 echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" | tar zx
 
-PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/php.tar.gz"
+PHP_URL="https://s3-eu-west-1.amazonaws.com/heroku-buildpack-testing/12092012/php.tar.gz"
 echo "-----> Bundling PHP version $PHP_VERSION"
 curl --silent --max-time 60 --location "$PHP_URL" | tar xz
 
@@ -59,11 +59,6 @@ export PHP_INI_SCAN_DIR=/app/www
 echo "Launching apache"
 exec /app/apache/bin/httpd -DNO_DETACH
 EOF
-
-ls
-ls php
-ls apache
-cat php/VERSION
 
 
 chmod +x boot.sh

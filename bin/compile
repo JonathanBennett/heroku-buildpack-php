@@ -62,7 +62,7 @@ EOF
 
 ls
 ls php
-ls /apache/
+ls apache
 cat /php/VERSION
 
 

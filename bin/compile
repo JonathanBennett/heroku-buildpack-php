@@ -61,9 +61,9 @@ exec /app/apache/bin/httpd -DNO_DETACH
 EOF
 
 ls
-ls /app/php/
-ls /app/apache/
-cat /app/php/VERSION
+ls php
+ls /apache/
+cat /php/VERSION
 
 
 chmod +x boot.sh

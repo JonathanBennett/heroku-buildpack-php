@@ -63,7 +63,7 @@ EOF
 ls
 ls php
 ls apache
-cat /php/VERSION
+cat php/VERSION
 
 
 chmod +x boot.sh

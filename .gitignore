@@ -1,3 +1,4 @@
 create.sh
 scripts/
 .DS_Store
+build/

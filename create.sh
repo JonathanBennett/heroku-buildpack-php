@@ -8,10 +8,10 @@ make install
 cd ..
 
 # php
-curl -O -L http://uk3.php.net/get/php-5.3.10.tar.gz/from/this/mirror
-mv mirror php-5.3.10.tar.gz
-tar xzvf php-5.3.10.tar.gz
-cd php-5.3.10/
+curl -O -L http://uk.php.net/get/php-5.4.6.tar.gz/from/uk3.php.net/mirror
+mv mirror php-5.4.6.tar.gz
+tar xzvf php-5.4.6.tar.gz
+cd php-5.4.6/
 echo "./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --enable-ftp --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl"
 ./configure --prefix=/app/php --with-mysql --enable-ftp --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl
 make

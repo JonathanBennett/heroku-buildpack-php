@@ -8,11 +8,12 @@ make install
 cd ..
 
 # php
-curl -O -L http://us2.php.net/get/php-5.3.6.tar.gz/from/us.php.net/mirror 
-mv mirror php.tar.gz
-tar xzvf php.tar.gz
-cd php-5.3.6/
-./configure --prefix=/app/php --with-mysql --with-pdo-mysql --enable-ftp --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-jpg-dir --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl
+curl -O -L http://uk3.php.net/get/php-5.3.10.tar.gz/from/this/mirror
+mv mirror php-5.3.10.tar.gz
+tar xzvf php-5.3.10.tar.gz
+cd php-5.3.10/
+echo "./configure --prefix=/app/php --with-apxs2=/app/apache/bin/apxs --with-mysql --enable-ftp --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl"
+./configure --prefix=/app/php --with-mysql --enable-ftp --with-pdo-mysql --with-pgsql --with-pdo-pgsql --with-iconv --with-gd --with-curl=/usr/lib --with-config-file-path=/app/php --enable-soap=shared --with-openssl
 make
 make install
 cd ..
@@ -34,5 +35,5 @@ cp /usr/include/php5/ext/apc/apc_serializer.h /app/php/include/php/ext/apc/
 cd /app
 echo '2.2.22' > apache/VERSION
 tar -zcvf apache.tar.gz apache
-echo '5.4.6' > php/VERSION
+echo '5.3.10' > php/VERSION
 tar -zcvf php.tar.gz php
